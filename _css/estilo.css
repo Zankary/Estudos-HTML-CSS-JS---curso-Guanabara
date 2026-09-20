@@ -1,0 +1,251 @@
+@charset "UTF-8"; /*formatação para leitura de texto acentuado do latino/português*/
+@font-face { /*abrindo formula para puxar uma fonte externa "www.google.com/fonts"*/
+	font-family: 'fontelogo';  /*nomeando a fonte externa*/
+	src: url("../_fonts/bubblegum-sans-regular.otf"); /*selecionando o diretorio da fonte externa*/
+}
+body {
+	 background-color: #dddddd;
+     color: rgba(0, 0, 0, 1);
+	 text-shadow: 0px 0px 0px black;
+	 font-family: Arial;
+}
+
+div#interface { /*selecionando a div de interface para ediçao*/
+	width: 1600px; /*limitando a div para 900px*/
+	background-color: white;
+	margin: -20px auto 10px auto;
+	box-shadow: 0px 0px 10px black;
+	padding: 10px 10px 10px 10px;
+}
+
+p   {
+	text-align: justify; /*preencher o texto conforme o tamanho da tela com alinhamento de espaçamento*/
+	text-indent: 50px; /*criar um espaço antes de iniciar o texto, usado em paragrafos*/
+}
+
+a {
+	color : #606060;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+header#cabecalho img#icone { /*selecionar o header cabecalho de imagem para edição*/
+	position: absolute;
+	left: 1600px;
+	top: 70px;
+}
+
+header#cabecalho{ /*selecionar o cabecalho geral para edição*/
+	border-bottom: 1px #000000 solid; /*variado em: solid, dashed, inset, outset*/
+	height: 150px;
+	background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 100px; /*colocar uma imagem como plano de fundo*/
+}
+
+header#cabecalho h1 {
+	font-family: 'fontelogo', sans-serif;
+	font-size: 30pt;
+	color: #606060;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.6);
+	padding: 0px;
+	margin-bottom: 0px;
+}
+header#cabecalho h2 {
+	font-family: Arial, sans-serif;
+	color: #888888;
+	font-size: 15pt;
+	padding: 0px;
+	margin-top: 0px;
+}
+/* Formatação de imagens com legendas */
+
+figure.foto-legenda { /*selecionar imagem para adicionar bordas e seombras para borda*/
+	position: relative; 
+	border: 8px solid white; /*px tipo cor*/
+	box-shadow: 1px 1px 4px black; /*sombra da borda*/
+}
+
+figure.foto-legenda img { /*selecionar a imagem para modificar formatos*/
+	width: 100%; /*manter a proporção da img dinamica de acordo com o tamanho da janela*/
+	height: 100%; /*manter a proporção da img dinamica de acordo com o tamanho da janela*/
+}
+
+figure.foto-legenda figcaption { /*selecionar a classe para adicionar efeitos*/
+	opacity: 0; 
+	position: absolute;
+	top: 0px;
+	background-color: rgba(0,0,0,.6);
+	color: white;
+	width: 100%;
+	height: 100%;
+	padding: 10px;  /* espaço de paisagem para textos dentro da imagem */
+	box-sizing: border-box;  /*recalibrar a caixa para manter no tamanho da imagem*/
+	transition: opacity 1s;  /*criar uma transição suave para o aparecimento da descrição após passar o mouse*/
+}
+figure.foto-legenda:hover figcaption{ /*detectar o mouse sobre a imagem para executar uma ação abaixo*/
+	opacity: 1; /*aumentar a opacidade quando o mouse estiver sobre a img*/
+	
+}
+/*Formatação do menu*/
+
+nav#menu {  /*selecionar categoria para modificar*/
+	display: block; /*fazer menu flutuar como um bloco permitindo mover a posição se necessario*/
+}
+
+nav#menu ul {   /*selecionar categoria para modificar*/
+	list-style: none; /*remover bolinhas criada pelo <ul>*/
+	text-transform: uppercase; /*forçar todas letras a serem maiusculas*/
+	position: absolute; /*permitir que o conteudo não fique preso à pontos especificos.*/
+	top: -20px;
+	left: 800px;
+}
+
+nav#menu li {   /*selecionar categoria para modificar*/
+	display: inline-block; /*ordenar textos de links lado a lado, inves de abaixo*/
+	background-color: #dddddd;
+	padding: 10px;  /* espaço de paisagem para textos dentro da imagem */
+	margin: 2px;  /*espaço entre palavras*/
+	transition: background-color .333s;
+}
+
+nav#menu li:hover {
+	background-color: #606060;
+	
+}
+
+nav#menu h1 { /*selecionar categoria h1 para modificar*/
+	display: none; /*esconder conteudos não necessarios para serem visiveis*/
+}
+
+nav#menu a {  /*selecionar categoria "a" para modificar*/
+	color: black;
+	text-decoration: none; /*remover sublinhado, traço de underlina abaixo das palavras*/
+	
+}
+
+nav#menu a:hover { /*detectar cursor acima do botão para executar um efeito listado abaixo*/
+	color: #ffffff;
+	text-decoration: underline; /*adicionar sublinhado underline no texto*/
+}
+
+section#corpo { /*selecionar a seção corpo para edição*/
+	display: block; /*criar um bloco em volta permitido ser movido como desejado*/
+	width: 900px; /*limitando o texto a esquerda para dar espaço ao outro conteudo*/
+	float: left; /*fazer o bloco do corpo flutuar a esquerda*/
+	border-right: 1px solid #606060; /*criar uma borda apenas na direita para separar o conteudo.*/
+	padding: 17px; /*adicionando um espaço entre a borda e o conteudo*/
+}
+/*formatação do article*/
+article#noticia-principal h2 {
+	font-size: 12pt;
+	color: #606060;
+	background-color: #dddddd;
+	padding: 5px 0px 5px 10px;
+	margin: 10px 0px 10px 0px;
+}
+
+aside#lateral { /**/
+	display: block;
+	width: 645px;
+	float: right;
+	background-color: #dddddd;
+	padding: 10px;
+	margin-top: 10px;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.5); /*lateral e vertical e espalhamento*/
+}
+
+aside#lateral h1 {
+	font-family: 'fontelogo', sans-serif;
+	font-size: 20pt;
+	color: #606060;
+	margin-top: 0px;
+}
+
+aside#lateral h2 {
+	background-color: #606060;
+	font-size: 13pt;
+	color: #ffffff;
+	padding: 5px;
+}
+
+header#cabecalho-artigo h1 {
+	font-family: 'fontlogo', sans-serif;
+	font-size: 20pt;
+	color: #606060;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+.direita {
+	text-align: right;
+}
+
+header#cabecalho-artigo h2 {
+	font-size: 13pt;
+	color: #cecece;
+	background-color: #ffffff;
+	margin: 0px;
+}
+
+header#cabecalho-artigo h3 {
+	font-size: 12px;
+	color: #606060;
+}
+
+footer#rodape {
+	clear: both; /*corrigir o problema da borda abaixo*/
+	border-top: 1px solid #606060; /*criando borda no topo para separar do conteudo principal*/
+}
+
+footer#rodape p {
+	text-align: center; /*centralizando o texto do rodape*/
+}
+table#tabelaspec {
+	border: 1px solid #606060;
+	border-spacing: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	left: 100px;
+}
+table#tabelaspec td {
+	border: 1px solid #606060;
+	padding: 10px;
+	text-align: center;
+	vertical-align: center;
+}
+table#tabelaspec td.ce { /*buscar uma class para edição individual*/
+	text-align: right;
+	color: #ffffff;
+	background-color: #606060;
+	font-weight: bold;
+}
+table#tabelaspec td.cd { /*buscar uma class para edição individual*/
+	text-align: center;
+	background-color: #cecece;
+}
+
+table#tabelaspec caption {
+	color: #888888;
+	font-size: 12pt;
+	font-weight: bolder;
+}
+table#tabelaspec caption span { /*selecionando span especifico dentro de outras tags para edição*/
+	display: block;
+	float: right; /*posicionar o bloco/texto no lugar desejado*/
+	color: black;
+	font-size: 8pt;
+	margin-top: 12px;
+}
+div#tv-radio01 {
+	margin-left: 120px;
+}
+div#tv-radio0 {
+	margin-left: 190px;
+}
+/*div#spec {
+	text-align: center;
+}*/
+body {
+	background-image: url("../fundo.jpg");
+}

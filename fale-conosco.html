@@ -1,0 +1,99 @@
+<!DOCTYPE html> <!-- seleção para html 5 -->
+<html lang="pt-br"> <!-- definir linguagem para html -->
+<head> <!-- cabeça para defirnir comportamento -->
+     <meta charset="UTF-8"/> <!-- mudança de ansi para UTF-8 permitindo a adição de textos acentuados -->
+     <title>tecnologia-do-google</title> <!-- titulo para o projeto -->
+     <link rel="stylesheet" type="text/css" href="_css/estilo.css"/> <!-- puxar endereço dos estilos.css -->
+     <link rel="stylesheet" type="text/css" href="_css/form.css"/>
+     <script language="javascript" src="_javascript/funcoes.js"></script>
+     <script>
+        function calc_total() {
+            var Quant = parseInt(document.getElementById('cQuant').value);
+            preco = Quant * 1500;
+            document.getElementById('cPreco').value = preco;
+        }
+     </script>
+</head> <!-- fechamento para comportamento -->
+
+<body> <!-- corpo para adicionar o conteúdo bruto -->
+<div id="interface"> <!--criando uma div para edição no css dps-->
+
+     <header id="cabecalho">
+     <hgroup>
+     <h1>Google Glass</h1>
+     <h2>A revolução do Google está chegando</h2>
+     </hgroup>
+
+     <img id="icone" src="_imagens/contato.png"/>  <!-- carregar uma imagem -->
+     <nav id="menu"> <!--( <nav> ) representa uma seção de uma página que aponta para outras páginas ou para outras áreas da página,-->
+     <h1>Menu Principal</h1>
+     <ul type="" start=""> <!-- OL lista ordenada para citar numerações e start=""para especificar a numeração de inicio-->
+         <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li> <!--LI para listagem, onmouseover para determinar a foto se esse botão estiver com o mouse sobre-->
+         <li onmouseover="mudaFoto('_imagens/especificacoes.png')"onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+         <li onmouseover="mudaFoto('_imagens/fotos.png')"onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+         <li onmouseover="mudaFoto('_imagens/multimidia.png')"onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+         <li onmouseover="mudaFoto('_imagens/contato.png')"onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+    </ul> <!--ul para não listar ordem de numeros ou letras caso necessario-->
+    </nav>
+
+</header>
+
+<section id="Specsbody">
+    <article id="noticia-principal">
+        <header id="cabecalho-artigo">
+    <hgroup>
+    <h3>Fale Conosco > &nbsp; Contato</h3>
+    <h1>Formulário de Contato</h1>
+    <h2>por Gustavo Guanabara</h2>
+    <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+    </hgroup>
+    </header>
+
+    <form method="post" id="fContato" action="mailto:contato@hotmail.com" oninput="calc_total();">
+        <fieldset id="usuario">
+            <legend>Identificação do Usuário</legend>
+            <p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo"/></p>
+            <p><label for="cSenha">Senha:</label> <input type="password" name="tSenha" id="cSenha" size="20" maxlength="30" placeholder="min 12 digitos"/></p>
+            <p><label for="cEmail">E-mail:</label> <input type="email" name="tEmail" id="cEmail" size="20" maxlength="30" placeholder=""/></p>
+            <fieldset id="Sexo"><legend>Sexo:</legend>
+                <input type="radio" name="tSexo" id="cMasc" value="masculino"/> <label for="cMasc">Masculino</label>
+                <input type="radio" name="tSexo" id="cFem" value="feminino"/> <label for="cFem">Feminino</label>
+            </fieldset>
+            <p><label for="cNasc">Data de Nascimento:</label> <input type="date" name="tNasc" id="cNasc"></p>
+        </fieldset>
+    
+        <fieldset id="endereço">
+            <legend>Endereço do Usuário</legend>
+            <p><label for="cRua">Logradouro:</label> <input type="text" name="tRua" id="cRua" size="17" maxlength="100" placeholder="Rua, Av, Trav,"/></p>
+            <p><label for="cNum">Número:</label> <input type="number" name="tNum" id="cNum" size="18" maxlength="10" min="0" max="9999" placeholder="Nº Residencial"/></p>
+            <p><label for="estado">Estado:</label> <input type="text" name="estado" id="estado" size="20" maxlength="30" placeholder="Estado em que você mora"/></p>
+            <p><label for="cidade">Cidade:</label> <input type="text" name="cidade" id="cidade" size="20" maxlength="30" placeholder="Sua Cidade"/></p>
+        </fieldset>
+    
+        <fieldset id="mensagem">
+            <legend>Mensagem do Usuário</legend>
+            <p><label for="cGrau">Grau de Urgência:</label> Min<input type="range" name="tGrau" id="cGrau" min="0" max="10" step="1"/>Máx</p>
+            <p><label for="cMens">Mensagem:</label> <textarea name="tMens" id="cMens" rows="4" cols="35" placeholder="Escreva sua mensagem aqui..."></textarea></p>
+        </fieldset>
+    
+        <fieldset id="pagamento">
+            <legend>Quero um Google Glass</legend>
+            <p><input type="checkbox" name="tPed" id="cPed" checked/>
+            <label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
+            <p><label for="cCor">Cor:</label> <input type="color" value="#0000FF" name="tCor" id="cCor" size="20" maxlength="30" placeholder="Cor"/></p>
+            <p><label for="cQuant">Quantidade:</label> <input type="number" name="tQuant" id="cQuant" size="20" maxlength="30" placeholder="Quantidade"/></p>
+            <p><label for="cPreco">Preço Total: R$</label> <input type="text" name="tPreco" id="cPreco" size="20" maxlength="30" placeholder="Total a Pagar" readonly/></p>
+        </fieldset>
+    
+        <p><input type="image" name="tEnviar" src="_imagens/botao-enviar.png"/></p>
+        
+    </form>
+
+<footer id="rodape"> <!--rodape start-->
+<p>Copyright &#169; 2013 - by Gustavo Guanabara</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.facebook.com/cursoemvideo" target="_blank">Facebook</a> | <a href ="http://www.twitter.com/cursoemvideo" target="_blank">Twitter</a></p>
+</span>
+</footer> <!--rodape end-->
+</div>
+</body>
+</html>

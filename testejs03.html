@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Teste JS03</title>
+	<meta charset="utf-8"/>
+	<script>
+	    var quebrada = false; <!--criando uma variavel definida quebrada e desativando-->
+	    function mudaLampada(tipo) { <!--se a função acenderLampada for ativada, segue com comandos abaixo de acordo com o tipo-->
+		    if (tipo == 1) {  <!--define o tipo para selecionar a ação a ser executada se a condição do tipo for ativada tipo 1-->
+			    arquivo = "_imagens/lampada-acesa.jpg"; <!-- parameto arquivo para chamar a imagem de acordo com o tipo-->
+			}
+			if (tipo == 2) {
+			    arquivo = "_imagens/lampada-apagada.jpg";
+			}
+			if (tipo == 3) {
+			    arquivo = "_imagens/lampada-quebrada.jpg";
+			}
+			if (!quebrada) { <!--!=não funcional indicando q se a função estiver false, o codigo irá prosseguir do !quebrada-->
+		        document.getElementById("luz").src = arquivo; 
+				if (tipo == 3) {
+				    quebrada = true; <!--ativando a variavel quebrada e desabilidando o "document.getElementById"-->
+			    }
+		    }
+        }
+	</script>
+</head>
+<body>
+    <h1>Acenda a lâmpada</h1>
+	<img src="_imagens/lampada-apagada.jpg" id="luz" onmouseover="mudaLampada(1)" onmouseout="mudaLampada(2)" onclick="mudaLampada(3)"/> <!--"onclick" para detectar o mouse clickando... fixa o id da imagem apagada para Luz e onmouse move para fornecer o comando acenderLampada-->
+
+</body>
+</html>

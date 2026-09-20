@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Teste JS04</title>
+	<meta charset="utf-8"/>
+	<script>
+	    var quebrada = false; <!--criando uma variavel definida quebrada e desativando-->
+	    function mudaLampada(tipo) { <!--se a função acenderLampada for ativada, segue com comandos abaixo de acordo com o tipo-->
+			if (!quebrada) { <!--!=não funcional indicando q se a função estiver false, o codigo irá prosseguir do !quebrada-->
+		        document.getElementById("luz").src = "_imagens/" + tipo + ".jpg"; 
+				if (tipo == "lampada-quebrada") {
+				    quebrada = true; <!--ativando a variavel quebrada e desabilidando o "document.getElementById"-->
+			    }
+		    }
+        }
+	</script>
+</head>
+<body>
+    <h1>Acenda a lâmpada</h1>
+	<img src="_imagens/lampada-apagada.jpg" id="luz" onmouseover="mudaLampada('lampada-acesa')" onmouseout="mudaLampada('lampada-apagada')" onclick="mudaLampada('lampada-quebrada')"/> <!--alterando o tipo para o nome da imagem desejada no diretorio ja definido em document.getElementById-->
+
+</body>
+</html>
